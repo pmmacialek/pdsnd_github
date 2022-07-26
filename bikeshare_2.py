@@ -411,7 +411,7 @@ def show_sequence_data(original_seq, rows_at_a_time=5):
     start_index = 0
     end_index = rows_at_a_time if original_seq.size >= rows_at_a_time else original_seq.size
     while start_index < original_seq.size:
-        seq = original_seq[start_index:end_index]
+        seq = original_seq.iloc[start_index:end_index]
         print(seq)
         if end_index < original_seq.size:
             if not ask_should_show_more_data():
@@ -447,12 +447,12 @@ def additional_station_stats(df):
     # to iteritems function
     print('\nThe most popular start stations:')
     start_stations = df['Start Station'].value_counts()
-    show_sequence_data(start_stations)
+    show_sequence_data(start_stations, 10)
 
     # Display the most popular end stations, 5 at a time, this time using a sequence
     print('\nThe most popular end stations:')
     end_stations = df['End Station'].value_counts()
-    show_sequence_data(end_stations)
+    show_sequence_data(end_stations, 10)
 
     print('-' * 40)
 
