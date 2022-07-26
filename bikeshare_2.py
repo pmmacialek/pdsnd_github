@@ -360,7 +360,7 @@ def user_stats(df):
 def additional_time_stats(df):
     """
     Displays additional information about the bikeshare trips -- like the number of trips
-    per month, etc.
+    per month, number of trips per day of the week, and the number of trips per start hour
 
     Args:
         (Pandas DataFrame) df: data frame of bike share data
@@ -405,7 +405,7 @@ def show_sequence_data(original_seq, rows_at_a_time=5):
     Displays the sequence of data 5 rows at a time and asks the user if the program should show more.
 
     Args:
-        (Pandas Sequence) original_seq: sequence of data for display
+        (Pandas Sequence or database) original_seq: sequence of data for display
         (int) Number of rows to display at a time, default to 5
     """
     start_index = 0
