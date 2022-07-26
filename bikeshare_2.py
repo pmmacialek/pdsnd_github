@@ -447,12 +447,12 @@ def additional_station_stats(df):
     # to iteritems function
     print('\nThe most popular start stations:')
     start_stations = df['Start Station'].value_counts()
-    show_sequence_data(start_stations)
+    show_sequence_data(start_stations, 10)
 
     # Display the most popular end stations, 5 at a time, this time using a sequence
     print('\nThe most popular end stations:')
     end_stations = df['End Station'].value_counts()
-    show_sequence_data(end_stations)
+    show_sequence_data(end_stations, 10)
 
     print('-' * 40)
 
