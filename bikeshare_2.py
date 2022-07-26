@@ -411,7 +411,7 @@ def show_sequence_data(original_seq, rows_at_a_time=5):
     start_index = 0
     end_index = rows_at_a_time if original_seq.size >= rows_at_a_time else original_seq.size
     while start_index < original_seq.size:
-        seq = original_seq[start_index:end_index]
+        seq = original_seq.iloc[start_index:end_index]
         print(seq)
         if end_index < original_seq.size:
             if not ask_should_show_more_data():
